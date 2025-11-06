@@ -1,14 +1,17 @@
-﻿uboy_latest_research_indicator_on_acquired_technology = {
-    trigger = {
-        has_technology_researched = Root       
+﻿# Root = The applicable country
+# scope:technology = The technology type they just acquired
+on_acquired_technology = {
+    on_actions = {
+        uboy_ui_latest_research_indicator_on_action
     }
-    effect = {
-        save_scope_as = uboy_latest_research_tech
+}
 
-        set_variable = {
-            name = uboy_has_researched_tech
-            value = 1
+uboy_ui_latest_research_indicator_on_action = {
+    # 국가 스코프에 최근 연구한 기술을 저장
+    effect = {
+        set_variable  = {
+            name = uboy_latest_research_tech
+            value = scope:technology
         }
     }
-        
 }

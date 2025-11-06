@@ -232,6 +232,8 @@ types tech_tree
 
 					expand = {}
 				}
+
+                ### UBOY.UI-LATEST RESEARCH INDICATOR
                 vbox = {
                     layoutstretchfactor_horizontal = 2
 					layoutpolicy_horizontal = growing
@@ -239,29 +241,39 @@ types tech_tree
                     background = {
 						using = entry_bg_simple
 					}
-                    # 1. 스코프가 존재할 때 보여줄 텍스트
-                    # GetPlayer는 현재 플레이어의 국가 스코프를 가져옵니다.
-                    textbox = {
+
+                    vbox = {
                         layoutpolicy_horizontal = growing
-						size = { 0 30 }
-                        name = "latest_research_display"
-                        raw_text = "최근 완료한 연구:"
-                        # HasSavedScope : 'GetPlayer'에게 'uboy_latest_research_tech'라는
-                        # 이름의 저장된 스코프가 있는지 확인합니다.
-                        visible = "[GetVariableSystem.Exists('uboy_has_researched_tech')]"
+
+                        textbox = {
+                            layoutpolicy_horizontal = growing
+                            size = { 0 30 }
+                            name = "latest_research_label"
+                            raw_text = "Latest research : "
+                            align = left|nobaseline
+                        }
+
+                        textbox = {
+                            layoutpolicy_horizontal = growing
+                            size = { 0 30 }
+                            name = "latest_research_tech_name"
+                            raw_text = "[GetPlayer.MakeScope.Var('uboy_latest_research_tech').GetTechnology.GetName]"
+                            align = left|nobaseline
+                            using = fontsize_large
+                        }
                     }
-                    
-                    # 2. 스코프가 없을 때 (예: 게임 시작 직후) 보여줄 텍스트
-                    textbox = {
-						layoutpolicy_horizontal = growing
-						size = { 0 30 }
-                        name = "latest_research_default"
-                        raw_text = "최근 완료한 연구: 없음"
-                        
-                        # Not(...) : 위 조건의 반대일 때, 즉 스코프가 없을 때 보입니다.
-                        #visible = "[Not(GetPlayer.HasSavedScope('uboy_latest_research_tech'))]"
-                    }
+
+                    # 변수가 없을 때 (게임 시작 직후 또는 아직 연구 완료 전)
+                    #textbox = {
+					#	layoutpolicy_horizontal = growing
+					#	size = { 0 30 }
+                    #    name = "latest_research_default"
+                    #    raw_text = "Latest research : None"
+                    #    #visible = "[GetPlayer.MakeScope.Var('uboy_latest_research_tech')]"
+                    #    align = left|nobaseline
+                    #}
                 }
+                ### UBOY.UI-LATEST RESEARCH INDICATOR END
 
 				### WEEKLY INNOVATION
 				vbox = {
