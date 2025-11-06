@@ -1,0 +1,14 @@
+﻿uboy_latest_research_indicator_on_acquired_technology = {
+    trigger = {
+        has_technology_researched = Root       
+    }
+    effect = {
+        save_scope_as = uboy_latest_research_tech
+
+        set_variable = {
+            name = uboy_has_researched_tech
+            value = 1
+        }
+    }
+        
+}
