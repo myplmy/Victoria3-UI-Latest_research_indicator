@@ -252,14 +252,23 @@ types tech_tree
                             text = "UBOY_UI_LATEST_RESEARCH_INDICATOR_LATEST_RESEARCH"
                             align = left|nobaseline
                         }
-
-                        textbox = {
+                        hbox = {
                             layoutpolicy_horizontal = growing
-                            size = { 0 30 }
-                            name = "latest_research_tech_name"
-                            raw_text = "[GetPlayer.MakeScope.Var('uboy_latest_research_tech').GetTechnology.GetName]"
-                            align = left|nobaseline
-                            using = fontsize_large
+                            icon ={
+                                size = { 30 30 }
+                                texture = "[GetPlayer.MakeScope.Var('uboy_latest_research_indicator_tech').GetTechnology.GetTexture]"
+                                raw_tooltip = "[GetPlayer.MakeScope.Var('uboy_latest_research_indicator_tech').GetTechnology.GetName]"
+                            }
+                            textbox = {
+                                layoutpolicy_horizontal = growing
+                                size = { 0 30 }
+                                name = "latest_research_tech_name"
+                                raw_text = "[GetPlayer.MakeScope.Var('uboy_latest_research_indicator_tech').GetTechnology.GetName]"
+                                align = left|nobaseline
+                                using = fontsize_large
+                            }
+
+                            expand = {}
                         }
                     }
 
