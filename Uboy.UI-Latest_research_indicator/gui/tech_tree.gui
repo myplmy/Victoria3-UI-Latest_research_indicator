@@ -249,7 +249,7 @@ types tech_tree
                             layoutpolicy_horizontal = growing
                             size = { 0 30 }
                             name = "latest_research_label"
-                            raw_text = "Latest research : "
+                            text = "UBOY_UI_LATEST_RESEARCH_INDICATOR_LATEST_RESEARCH"
                             align = left|nobaseline
                         }
 
