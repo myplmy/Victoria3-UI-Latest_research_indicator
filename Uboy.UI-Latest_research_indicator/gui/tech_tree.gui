@@ -247,9 +247,10 @@ types tech_tree
 
                         textbox = {
                             layoutpolicy_horizontal = growing
-                            size = { 0 30 }
+                            size = { 100 30 }
                             name = "latest_research_label"
                             text = "UBOY_UI_LATEST_RESEARCH_INDICATOR_LATEST_RESEARCH"
+                            elide = right
                             align = left|nobaseline
                         }
                         hbox = {
@@ -261,9 +262,10 @@ types tech_tree
                             }
                             textbox = {
                                 layoutpolicy_horizontal = growing
-                                size = { 0 30 }
+                                size = { 100 30 }
                                 name = "latest_research_tech_name"
                                 raw_text = "[GetPlayer.MakeScope.Var('uboy_latest_research_indicator_tech').GetTechnology.GetName]"
+                                elide = right
                                 align = left|nobaseline
                                 using = fontsize_large
                             }
