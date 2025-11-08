@@ -235,41 +235,81 @@ types tech_tree
 
                 ### UBOY.UI-LATEST RESEARCH INDICATOR
                 vbox = {
-                    layoutstretchfactor_horizontal = 2
-					layoutpolicy_horizontal = growing
-                    margin = { 22 16 }
+                    #layoutstretchfactor_horizontal = 2
+					#layoutpolicy_horizontal = growing
+                    layoutpolicy_vertical = growing
+                    margin = { 22 5 }
                     background = {
 						using = entry_bg_simple
 					}
 
                     vbox = {
-                        layoutpolicy_horizontal = growing
+                        #layoutpolicy_horizontal = growing
 
                         textbox = {
                             layoutpolicy_horizontal = growing
-                            size = { 100 30 }
+                            using = fontsize_medium
+                            size = { 220 15 }
                             name = "latest_research_label"
                             text = "UBOY_UI_LATEST_RESEARCH_INDICATOR_LATEST_RESEARCH"
                             elide = right
                             align = left|nobaseline
                         }
                         hbox = {
+                            #visible = "[GetVariableSystem.Exists('uboy_latest_research_indicator_tech1')]"
                             layoutpolicy_horizontal = growing
                             icon ={
-                                size = { 30 30 }
-                                texture = "[GetPlayer.MakeScope.Var('uboy_latest_research_indicator_tech').GetTechnology.GetTexture]"
-                                raw_tooltip = "[GetPlayer.MakeScope.Var('uboy_latest_research_indicator_tech').GetTechnology.GetName]"
+                                size = { 15 15 }
+                                texture = "[GetPlayer.MakeScope.Var('uboy_latest_research_indicator_tech1').GetTechnology.GetTexture]"
+                                raw_tooltip = "[GetPlayer.MakeScope.Var('uboy_latest_research_indicator_tech1').GetTechnology.GetName]"
                             }
                             textbox = {
                                 layoutpolicy_horizontal = growing
-                                size = { 100 30 }
-                                name = "latest_research_tech_name"
-                                raw_text = "[GetPlayer.MakeScope.Var('uboy_latest_research_indicator_tech').GetTechnology.GetName]"
+                                using = fontsize_medium
+                                size = { 220 15 }
+                                name = "latest_research_tech_name1"
+                                raw_text = "[GetPlayer.MakeScope.Var('uboy_latest_research_indicator_tech1').GetTechnology.GetName]"
                                 elide = right
                                 align = left|nobaseline
-                                using = fontsize_large
                             }
-
+                            expand = {}
+                        }
+                        hbox = {
+                            #visible = "[GetVariableSystem.Exists('uboy_latest_research_indicator_tech1')]"
+                            layoutpolicy_horizontal = growing
+                            icon ={
+                                size = { 15 15 }
+                                texture = "[GetPlayer.MakeScope.Var('uboy_latest_research_indicator_tech2').GetTechnology.GetTexture]"
+                                raw_tooltip = "[GetPlayer.MakeScope.Var('uboy_latest_research_indicator_tech2').GetTechnology.GetName]"
+                            }
+                            textbox = {
+                                layoutpolicy_horizontal = growing
+                                using = fontsize_medium
+                                size = { 220 15 }
+                                name = "latest_research_tech_name2"
+                                raw_text = "[GetPlayer.MakeScope.Var('uboy_latest_research_indicator_tech2').GetTechnology.GetName]"
+                                elide = right
+                                align = left|nobaseline
+                            }
+                            expand = {}
+                        }
+                        hbox = {
+                            #visible = "[GetVariableSystem.Exists('uboy_latest_research_indicator_tech1')]"
+                            layoutpolicy_horizontal = growing
+                            icon ={
+                                size = { 15 15 }
+                                texture = "[GetPlayer.MakeScope.Var('uboy_latest_research_indicator_tech3').GetTechnology.GetTexture]"
+                                raw_tooltip = "[GetPlayer.MakeScope.Var('uboy_latest_research_indicator_tech3').GetTechnology.GetName]"
+                            }
+                            textbox = {
+                                layoutpolicy_horizontal = growing
+                                using = fontsize_medium
+                                size = { 220 15 }
+                                name = "latest_research_tech_name3"
+                                raw_text = "[GetPlayer.MakeScope.Var('uboy_latest_research_indicator_tech3').GetTechnology.GetName]"
+                                elide = right
+                                align = left|nobaseline
+                            }
                             expand = {}
                         }
                     }

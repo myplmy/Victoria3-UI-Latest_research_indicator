@@ -9,9 +9,62 @@ on_acquired_technology = {
 uboy_ui_latest_research_indicator_on_action = {
     # 국가 스코프에 최근 연구한 기술을 저장
     effect = {
-        set_variable  = {
-            name = uboy_latest_research_indicator_tech
-            value = scope:technology
+        if = {
+            limit = {
+                has_variable = uboy_latest_research_indicator_tech3
+            }
+            set_variable  = {
+                name = uboy_latest_research_indicator_tech3
+                value = var:uboy_latest_research_indicator_tech2
+            }
+            set_variable  = {
+                name = uboy_latest_research_indicator_tech2
+                value = var:uboy_latest_research_indicator_tech1
+            }
+            set_variable  = {
+                name = uboy_latest_research_indicator_tech1
+                value = scope:technology
+            }
+        }
+        else_if = {
+            limit = {
+                NOT = {
+                    has_variable = uboy_latest_research_indicator_tech1
+                }
+             }
+            set_variable  = {
+                name = uboy_latest_research_indicator_tech1
+                value = scope:technology
+            }
+        }
+        else_if = {
+            limit = {
+                NOT = {
+                    has_variable = uboy_latest_research_indicator_tech2
+                }
+            }
+            set_variable  = {
+                name = uboy_latest_research_indicator_tech2
+                value = var:uboy_latest_research_indicator_tech1
+            }
+            set_variable  = {
+                name = uboy_latest_research_indicator_tech1
+                value = scope:technology
+            }
+        }
+        else = {
+            set_variable  = {
+                name = uboy_latest_research_indicator_tech3
+                value = var:uboy_latest_research_indicator_tech2
+            }
+            set_variable  = {
+                name = uboy_latest_research_indicator_tech2
+                value = var:uboy_latest_research_indicator_tech1
+            }
+            set_variable  = {
+                name = uboy_latest_research_indicator_tech1
+                value = scope:technology
+            }
         }
     }
 }
