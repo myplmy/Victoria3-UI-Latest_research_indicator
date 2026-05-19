@@ -136,6 +136,15 @@ types tech_tree
 								}
 							}
 						}
+                        
+						button_icon_cancel = {
+							parentanchor = top|right
+							size = { 25 25 }
+							tooltip = "REMOVE_CURRENT_RESEARCH_TECH_FROM_QUEUE"
+							using = tooltip_ne
+							onclick = "[Execute(Technology.RemoveFromQueue(GetPlayer.Self))]"
+							enabled = "[IsValid(Technology.RemoveFromQueue(GetPlayer.Self))]"
+						}
 					}
 				
 					### TEXT + PROGRESS
@@ -1263,6 +1272,16 @@ types tech_tree
 			using = tooltip_ne
 			onclick = "[Execute( Technology.AddToQueueWithUnlocks(GetPlayer.Self) )]"
 			enabled = "[IsValid( Technology.AddToQueueWithUnlocks(GetPlayer.Self) )]"
+		}
+        
+		### REMOVE CURRENT REASEARCH FROM QUEUE BUTTON
+		button_icon_cancel = {
+			visible = "[Technology.IsResearching(GetPlayer.Self)]"
+			size = { 50 50 }
+			tooltip = "REMOVE_CURRENT_RESEARCH_TECH_FROM_QUEUE"
+			using = tooltip_ne
+			onclick = "[Execute(Technology.RemoveFromQueue(GetPlayer.Self))]"
+			enabled = "[IsValid(Technology.RemoveFromQueue(GetPlayer.Self))]"
 		}
 	}
 
